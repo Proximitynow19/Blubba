@@ -13,7 +13,8 @@
     "diamondfire",
     "minecraft",
     "df",
-    "diamondfire-templates"
+    "diamondfire-templates",
+    "diamond-fire"
   ],
   "author": "BumpyBill",
   "license": "MIT",
@@ -23,5 +24,6 @@
   "homepage": "https://github.com/Proximitynow19/Blubba#readme",
   "bin": {
     "blubba": "bin/index.js"
-  }
+  },
+  "typings": "/typings"
 }
