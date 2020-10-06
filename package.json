@@ -1,0 +1,27 @@
+{
+  "name": "blubba",
+  "version": "0.0.0",
+  "description": "Compile JavaScript Code Into Diamondfire Templates",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Proximitynow19/Blubba.git"
+  },
+  "keywords": [
+    "diamondfire",
+    "minecraft",
+    "df",
+    "diamondfire-templates"
+  ],
+  "author": "BumpyBill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Proximitynow19/Blubba/issues"
+  },
+  "homepage": "https://github.com/Proximitynow19/Blubba#readme",
+  "bin": {
+    "blubba": "bin/index.js"
+  }
+}
