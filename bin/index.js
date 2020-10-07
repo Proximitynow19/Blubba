@@ -8,15 +8,18 @@ const args = process.argv.slice(2);
 
 const blocks = require(path.join(process.cwd(), args[0])).blocks;
 
-let events = [];
+let code = [
+  { block: "event", action: "Join" },
+  { block: "player_action", action: "EnableBlocks" },
+];
 
 gzip(
-  `{"blocks":[${events
+  `{"blocks":[${code
     .map(
       (m) =>
-        `{"id":"block","block":"func","args":{"items":[{"item":{"id":"item","data":{"item":"{DF_NBT:2580,id:\"minecraft:ender_chest\",tag:{PublicBukkitValues:{\"hypercube:codetemplatedata\":'{\"author\":\"Proximitynow\",\"name\":\"§bCode Template §3» §bEvent\",\"version\":1,\"code\":\"${m}\"}'},display:{Name:'{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"aqua\",\"text\":\"Code Template \"},{\"italic\":false,\"color\":\"dark_aqua\",\"text\":\"» \"},{\"italic\":false,\"color\":\"aqua\",\"text\":\"Event\"}],\"text\":\"\"}'}},Count:1b}"}},"slot":0}`
+        `{"id":"block","block":"${m.block}","args":{"items":[]},"action":"${m.action}"}`
     )
-    .join(",")},"data":""}]}`
+    .join(",")}]}`
 ).then((compressed) =>
   console.log(new Buffer.from(compressed).toString("base64"))
 );
