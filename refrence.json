@@ -1,0 +1,45 @@
+{
+  "blocks": [
+    {
+      "id": "block",
+      "block": "event",
+      "args": { "items": [] },
+      "action": "Join"
+    },
+    {
+      "id": "block",
+      "block": "player_action",
+      "args": {
+        "items": [
+          { "item": { "id": "txt", "data": { "name": "Test" } }, "slot": 0 },
+          {
+            "item": {
+              "id": "bl_tag",
+              "data": {
+                "option": "Add spaces",
+                "tag": "Text Value Merging",
+                "action": "SendMessage",
+                "block": "player_action"
+              }
+            },
+            "slot": 25
+          },
+          {
+            "item": {
+              "id": "bl_tag",
+              "data": {
+                "option": "Regular",
+                "tag": "Alignment Mode",
+                "action": "SendMessage",
+                "block": "player_action"
+              }
+            },
+            "slot": 26
+          }
+        ]
+      },
+      "action": "SendMessage",
+      "target": "Default"
+    }
+  ]
+}
