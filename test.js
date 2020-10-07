@@ -1,5 +1,4 @@
-console.log("Main");
-
-on("PLAYER_JOIN_GAME", () => {
-  PLAYER_ACTION.SEND_MESSAGE("Hello, World");
+const blubba = require("./lib/index");
+blubba.on("Join", () => {
+  blubba.PLAYER_ACTION.SEND_MESSAGE("Hello, World");
 });
