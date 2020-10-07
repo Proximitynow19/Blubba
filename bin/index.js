@@ -6,7 +6,7 @@ const { gzip } = require("node-gzip");
 
 const args = process.argv.slice(2);
 
-const response = require(path.join(process.cwd(), args[0]));
+const blocks = require(path.join(process.cwd(), args[0])).blocks;
 
 let events = [];
 
