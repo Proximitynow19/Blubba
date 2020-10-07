@@ -26,5 +26,8 @@
   "bin": {
     "blubba": "bin/index.js"
   },
-  "typings": "/typings"
+  "typings": "/typings",
+  "dependencies": {
+    "node-gzip": "^1.1.2"
+  }
 }
