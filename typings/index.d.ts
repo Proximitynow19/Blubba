@@ -1,18 +1,63 @@
 export interface PLAYER_ACTION {
-  GIVE_ITEMS(ITEMS: ITEM | ITEM[], NUMBER?: number): void;
-  SET_ITEMS(ITEMS: ITEM[]): void;
-  SET_ITEM_IN_SLOT(ITEM?: ITEM, NUMBER: number): void;
-  SET_EQUIPMENT_ITEM(ITEM?: ITEM, TAGS: TAG[]): void;
-  SET_ARMOR_ITEMS(ITEMS: ITEM | ITEM[]): void;
-  REPLACE_ITEMS(ITEMS?: ITEM | ITEM[], ITEM: ITEM, NUMBER?: number): void;
-  REMOVE_ITEMS(ITEMS: ITEM | ITEM[]): void;
-  CLEAR_ITEMS(ITEMS: ITEM | ITEM[]): void;
-  CLEAR_INVENTORY(TAGS: TAG[]): void;
-  GIVE_RANDOM_ITEM(ITEMS: ITEM[]): void;
-  SET_ITEM_ON_CURSOR(ITEM?: ITEM): void;
+  GIVE_ITEMS(ITEMS_TO_GIVE: ITEM | ITEM[], AMOUNT_TO_GIVE?: NUMBER): void;
+  SET_ITEMS(ITEMS_TO_GIVE_IN_THEIR_CORRESPONDING_ITEM_SLOTS: ITEM[]): void;
+  SET_ITEM_IN_SLOT(ITEM_TO_SET?: ITEM, SLOT_TO_SET: NUMBER): void;
+  SET_EQUIPMENT_ITEM(ITEM_TO_SET?: ITEM): void; //tag
+  SET_ARMOR_ITEMS(ARMOR_TO_SET: ITEM | ITEM[]): void;
+  REPLACE_ITEMS(
+    ITEMS_TO_REPLACE?: ITEM | ITEM[],
+    ITEM_TO_REPLACE_WITH: ITEM,
+    AMOUNT_OF_ITEMS_TO_REPLACE?: NUMBER
+  ): void;
+  REMOVE_ITEMS(ITEMS_TO_REMOVE: ITEM | ITEM[]): void;
+  CLEAR_ITEMS(ITEMS_TO_CLEAR: ITEM | ITEM[]): void;
+  CLEAR_INVENTORY(): void; //tag
+  GIVE_RANDOM_ITEM(ITEMS_TO_PICK_FROM: ITEM[]): void;
+  SET_ITEM_ON_CURSOR(ITEM_TO_SET?: ITEM): void;
   SAVE_CURRENT_INVENTORY(): void;
   LOAD_SAVED_INEVENTORY(): void;
-  SET_ITEM_COOLDOWN(ITEM: ITEM, NUMBER: number, SOUND: SOUND);
+  SET_ITEM_COOLDOWN(
+    ITEM_TYPE_TO_AFFECT: ITEM,
+    NUMBER: NUMBER,
+    SOUND: SOUND
+  ): void;
+  SEND_MESSAGE(MESSAGE_TO_SEND?: TEXT | TEXT[]): void; //tag
+  SEND_DIALOGUE(
+    MESSAGES_TO_SEND: TEXT | TEXT[],
+    MESSAGE_DELAY_TICKS?: NUMBER // default 60
+  ): void;
+  SEND_MESSAGE_WITH_HOVER(
+    MESSAGE_TO_SEND_IN_CHAT: TEXT,
+    MESSAGE_TO_SEE_ON_HOVER: TEXT
+  ): void;
+  CLEAR_CHAT(): void;
+  SHOW_TITLE_TEXT(
+    TITLE_TEXT: TEXT,
+    SUBTITLE_TEXT?: TEXT,
+    TITLE_DURATION?: NUMBER /* default 60 */,
+    FADE_IN_LENGTH?: NUMBER,
+    FADE_OUT_LENGHT?: NUMBER
+  ): void;
+  SHOW_ACTION_BAR_TEXT(MESSAGE_TO_SEND: TEXT | TEXT[]): void; //tag
+  OPEN_BOOK(BOOK_ITEM: ITEM): void;
+  SET_BOSS_BAR(
+    TITLE?: TEXT,
+    REMAINING_HEALTH?: NUMBER,
+    MAXIMUM_HEALTH?: NUMBER /* deafult 100.0 */
+  ): void; //tag
+  REMOVE_BOSS_BAR(): void; //tag
+  SEND_ADVANCEMENT(ADVANCEMENT_NAME: TEXT, ADVANCEMENT_ICON: ITEM): void; //tag
+  SET_PLAYER_LIST_INFO(HEADERFOOTER_TEXT?: TEXT | TEXT[]): void; //tag
+  PLAY_SOUND_EFFECT(
+    SOUND_TO_PLAY: SOUND | SOUND[],
+    PLAYBACK_LOCATION: LOCATION
+  ): void; //tag
+  STOP_SOUND_EFFECTS(SOUNDS_TO_STOP?: SOUND | SOUND[]): void; //tag
+  PLAY_SOUND_SEQUENCE(
+    SOUNDS_TO_PLAY: SOUND | SOUND[],
+    SOUND_DELAY?: NUMBER /* default 60 */,
+    PLAYBACK_LOCATION?: LOCATION
+  ): void;
 }
 
 export class ITEM {
@@ -20,14 +65,24 @@ export class ITEM {
   constructor(ITEM: string);
 }
 
-export class TAG {
-  TAG: string;
-  constructor(TAG: string);
-}
-
 export class SOUND {
   SOUND: string;
   constructor(SOUND: string);
+}
+
+export class TEXT {
+  TEXT: string;
+  constructor(TEXT: string);
+}
+
+export class NUMBER {
+  NUMBER: string;
+  constructor(NUMBER: string);
+}
+
+export class LOCATIOM {
+  LOCATION: string;
+  constructor(LOCATION: string);
 }
 
 export function on(event: EventType, callback: Function): void;

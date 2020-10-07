@@ -1,6 +1,6 @@
 {
   "name": "blubba",
-  "version": "0.0.0",
+  "version": "5.2.5",
   "description": "Compile JavaScript Code Into Diamondfire Templates",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
