@@ -10,8 +10,6 @@ const response = require(path.join(process.cwd(), args[0]));
 
 let events = [];
 
-console.log(file.toString());
-
 gzip(
   `{"blocks":[${events
     .map(
