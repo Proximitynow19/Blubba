@@ -8,6 +8,8 @@ const args = process.argv.slice(2);
 
 const file = fs.readFileSync(path.join(process.cwd(), args[0]));
 
+let output = { blocks: [] };
+
 console.log(file.toString());
 
 gzip("output").then((compressed) =>

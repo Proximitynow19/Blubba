@@ -1,13 +1,33 @@
-export interface message {
-  send(message: Message | string): void;
-  hover(message: message | string, hover: message | string): void;
-  sendDialogue(messages: (Message | string)[]): void;
-  empty: string; // This is the equivalent to /text []
+export interface PLAYER_ACTION {
+  GIVE_ITEMS(ITEMS: ITEM | ITEM[], NUMBER?: number): void;
+  SET_ITEMS(ITEMS: ITEM[]): void;
+  SET_ITEM_IN_SLOT(ITEM?: ITEM, NUMBER: number): void;
+  SET_EQUIPMENT_ITEM(ITEM?: ITEM, TAGS: TAG[]): void;
+  SET_ARMOR_ITEMS(ITEMS: ITEM | ITEM[]): void;
+  REPLACE_ITEMS(ITEMS?: ITEM | ITEM[], ITEM: ITEM, NUMBER?: number): void;
+  REMOVE_ITEMS(ITEMS: ITEM | ITEM[]): void;
+  CLEAR_ITEMS(ITEMS: ITEM | ITEM[]): void;
+  CLEAR_INVENTORY(TAGS: TAG[]): void;
+  GIVE_RANDOM_ITEM(ITEMS: ITEM[]): void;
+  SET_ITEM_ON_CURSOR(ITEM?: ITEM): void;
+  SAVE_CURRENT_INVENTORY(): void;
+  LOAD_SAVED_INEVENTORY(): void;
+  SET_ITEM_COOLDOWN(ITEM: ITEM, NUMBER: number, SOUND: SOUND);
 }
 
-export class Message {
-  message: string;
-  constructor(message: string);
+export class ITEM {
+  ITEM: string;
+  constructor(ITEM: string);
+}
+
+export class TAG {
+  TAG: string;
+  constructor(TAG: string);
+}
+
+export class SOUND {
+  SOUND: string;
+  constructor(SOUND: string);
 }
 
 export function on(event: EventType, callback: Function): void;
