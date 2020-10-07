@@ -10,4 +10,6 @@ const file = fs.readFileSync(path.join(process.cwd(), args[0]));
 
 console.log(file.toString());
 
-return gzip(output).then((compressed) => new Buffer(compressed).toString("base64"));
+gzip("output").then((compressed) =>
+  console.log(new Buffer.from(compressed).toString("base64"))
+);
