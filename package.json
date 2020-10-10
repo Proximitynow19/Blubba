@@ -1,7 +1,7 @@
 {
   "name": "blubba",
-  "version": "5.2.5",
-  "main": "/lib/index.js",
+  "version": "5.2.41",
+  "main": "lib/index.js",
   "description": "Compile JavaScript Code Into Diamondfire Templates",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -27,7 +27,7 @@
   "bin": {
     "blubba": "bin/index.js"
   },
-  "typings": "/typings",
+  "types": "typings/index.d.ts",
   "dependencies": {
     "node-gzip": "^1.1.2"
   }
