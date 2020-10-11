@@ -1,14 +1,32 @@
 const fs = require("fs");
 const db = require("./db.json");
 
-var code = `${db.codeblocks
+var code = `
+${fs.readFileSync("typings/types.d.ts", "utf-8")}
+${db.codeblocks
   .map(
     (m) =>
-      `export interface ${m.identifier} {${db.actions
+      `
+      /**
+      * ${m.name}
+      * 
+      * ${m.item.description.join(`\n* `)}
+      * 
+      * ${m.item.example.join(`\n* `)}
+      */
+      export interface ${m.identifier} {${db.actions
         .filter((n) => n.codeblockName === m.name)
         .map(
           (k) =>
-            `${k.name.replace(/[^a-zA-Z]/gi, "_").toUpperCase()}(${
+            `
+            /**
+            * ${m.name}
+            * 
+            * ${m.item.description.join(`\n* `)}
+            * 
+            * ${m.item.example.join(`\n* `)}
+            */
+           ${k.name.replace(/[^a-zA-Z]/gi, "_").toUpperCase()}(${
               k.icon.arguments
                 ? k.icon.arguments
                     .map((s) =>
@@ -44,7 +62,7 @@ var code = `${db.codeblocks
 
 console.log(code);
 
-fs.writeFile("index.d.ts", code, function (err) {
+fs.writeFile("typings/index.d.ts", code, function (err) {
   if (err) {
     return console.log(err);
   }
