@@ -16,17 +16,11 @@ declare namespace blubba {
   }
 
   export class TEXT extends Value {
-    constructor(value: TEXT | string | VARIABLE) {
-      super();
-      this.value = value;
-    }
+    constructor(value: TEXT | string | VARIABLE);
   }
 
   export class NUMBER extends Value {
-    constructor(value: NUMBER | number | VARIABLE) {
-      super();
-      this.value = value;
-    }
+    constructor(value: NUMBER | number | VARIABLE);
   }
 
   export class LOCATION extends Value {
@@ -36,30 +30,15 @@ declare namespace blubba {
       z: number | VARIABLE,
       pitch: number | undefined | VARIABLE,
       yaw: number | undefined | VARIABLE
-    ) {
-      super();
-      this.value = {
-        x,
-        y,
-        z,
-        pitch,
-        yaw
-      };
-    }
+    );
   }
 
   export class VARIABLE extends Value {
-    constructor(key: TEXT | string | VARIABLE, value: ANY_TYPE) {
-      super();
-      this.value = { key, value };
-    }
+    constructor(key: TEXT | string | VARIABLE, value: ANY_TYPE);
   }
 
   export class PARTICLE extends Value {
-    constructor(value: string | ITEM | VARIABLE) {
-      super();
-      this.value = value;
-    }
+    constructor(value: string | ITEM | VARIABLE);
   }
 
   export class POTION extends Value {
@@ -67,28 +46,15 @@ declare namespace blubba {
       value: string | ITEM | VARIABLE,
       length: number | undefined | VARIABLE,
       amplifier: number | undefined | VARIABLE
-    ) {
-      super();
-      this.value = {
-        value,
-        length,
-        amplifier,
-      };
-    }
+    );
   }
 
   export class PROJECTILE extends Value {
-    constructor(value: string | ITEM | VARIABLE) {
-      super();
-      this.value = value;
-    }
+    constructor(value: string | ITEM | VARIABLE);
   }
 
   export class ITEM extends Value {
-    constructor(value: string | ITEM | VARIABLE) {
-      super();
-      this.value = value;
-    }
+    constructor(value: string | ITEM | VARIABLE);
   }
 
   export type SOUND = string;

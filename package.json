@@ -5,7 +5,7 @@
   "description": "Compile JavaScript Code Into Diamondfire Templates",
   "scripts": {
     "test": "node bin/index.js",
-    "docs": "typedoc --out docs --includeDeclarations typings/index.d.ts"
+    "docs": "typedoc --out docs --excludeExternals typings/index.ts"
   },
   "repository": {
     "type": "git",

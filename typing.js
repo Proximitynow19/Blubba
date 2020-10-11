@@ -2,7 +2,7 @@ const fs = require("fs");
 const db = require("./db.json");
 
 var code = `
-${fs.readFileSync("typings/types.d.ts", "utf-8")}
+${fs.readFileSync("typings/types.ts", "utf-8")}
 ${db.codeblocks
   .map(
     (m) =>
