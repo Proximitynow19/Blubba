@@ -7,9 +7,6 @@
     "test": "node bin/index.js",
     "docs": "typedoc --out docs --excludeExternals typings/index.ts"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Proximitynow19/Blubba.git"
