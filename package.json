@@ -1,6 +1,6 @@
 {
   "name": "blubba",
-  "version": "5.2.41",
+  "version": "5.2.411",
   "main": "lib/index.js",
   "description": "Compile JavaScript Code Into Diamondfire Templates",
   "scripts": {
