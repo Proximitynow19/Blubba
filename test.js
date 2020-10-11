@@ -1,9 +1,8 @@
 const blubba = require("./lib/index");
 
 blubba.on("JOIN", () => {
-  blubba.player_action.SENDMESSAGE("Hello World!");
-  blubba.set_var.set("v_test", "123321");
-  blubba.player_action.SENDMESSAGE("v_test");
+  blubba.set_var.set("v_testvariable", "Hello World!");
+  blubba.player_action.SENDMESSAGE("v_testvariable");
 });
 
 module.exports = blubba.blocks;
