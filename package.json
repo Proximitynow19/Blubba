@@ -29,6 +29,7 @@
   },
   "types": "typings/index.d.ts",
   "dependencies": {
+    "chalk": "^4.1.0",
     "node-gzip": "^1.1.2"
   },
   "devDependencies": {
