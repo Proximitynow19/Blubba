@@ -13,6 +13,8 @@ Compile JavaScript Code Into Diamondfire Templates
 
 ## Usage
 
+> Please Note: Blubba doesn't run your code, it only compiles it into a Diamondfire template
+
 ```js
 const blubba = require("blubba");
 
