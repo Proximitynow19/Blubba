@@ -41,6 +41,8 @@ export class LOCATION extends Value {
       x,
       y,
       z,
+      pitch,
+      yaw,
     };
   }
 }

@@ -42,6 +42,8 @@ declare namespace blubba {
         x,
         y,
         z,
+        pitch,
+        yaw
       };
     }
   }
